@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOs专业版 - 高效生产力</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 25px;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            border-bottom-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            width: 60px;
+            text-align: center;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature-content p {
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .generator {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .generator h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+        
+        .progress-bar {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: white;
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 6px;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            background: white;
+            color: #4facfe;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回主页面</a>
+        
+        <header>
+            <h1>💼 MOs 专业版</h1>
+            <p>为专业人士打造的高效操作系统</p>
+        </header>
+        
+        <div class="card">
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab(0)">核心功能</div>
+                <div class="tab" onclick="switchTab(1)">开发工具</div>
+                <div class="tab" onclick="switchTab(2)">系统管理</div>
+            </div>
+            
+            <div id="tab0" class="tab-content active">
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <div class="feature-content">
+                        <h3>性能优化</h3>
+                        <p>智能资源分配，最大化系统性能，支持大型软件运行</p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🖥️</div>
+                    <div class="feature-content">
+                        <h3>多桌面工作区</h3>
+                        <p>创建多个虚拟桌面，按项目分类，提高工作效率</p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">☁️</div>
+                    <div class="feature-content">
+                        <h3>企业云同步</h3>
+                        <p>跨设备同步工作和设置，随时随地继续工作</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="tab1" class="tab-content">
+                <div class="feature">
+                    <div class="feature-icon">💻</div>
+                    <div class="feature-content">
+                        <h3>开发环境</h3>
+                        <p>预装Python、Node.js、Java、C++等开发环境</p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔧</div>
+                    <div class="feature-content">
+                        <h3>高级终端</h3>
+                        <p>支持SSH、Docker、Kubernetes等开发工具</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="tab2" class="tab-content">
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-content">
+                        <h3>企业级安全</h3>
+                        <p>BitLocker加密、Windows Defender企业版</p>
+                    </div>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <div class="feature-content">
+                        <h3>域加入</h3>
+                        <p>支持企业域和网络策略管理</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="generator">
+            <h3>⚙️ 生成专业版ISO</h3>
+            
+            <div class="form-group">
+                <label>选择架构：</label>
+                <select id="architecture" class="form-control">
+                    <option value="x64">64位 (x64) - 主流PC</option>
+                    <option value="arm64">ARM64 - 平板和移动设备</option>
+                </select>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            
+            <div id="status">准备生成专业版ISO</div>
+            
+            <div>
+                <button class="btn" onclick="generateISO()">
+                    <span>🔧</span> 生成专业版ISO
+                </button>
+                <button class="btn btn-secondary" onclick="downloadISO()">
+                    <span>📥</span> 下载ISO文件
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let isGenerating = false;
+        
+        function switchTab(tabIndex) {
+            // 更新标签
+            document.querySelectorAll('.tab').forEach((tab, index) => {
+                tab.classList.toggle('active', index === tabIndex);
+            });
+            
+            // 更新内容
+            document.querySelectorAll('.tab-content').forEach((content, index) => {
+                content.classList.toggle('active', index === tabIndex);
+            });
+        }
+        
+        function generateISO() {
+            if (isGenerating) return;
+            
+            isGenerating = true;
+            const progressFill = document.getElementById('progressFill');
+            const status = document.getElementById('status');
+            const arch = document.getElementById('architecture').value;
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 10;
+                progressFill.style.width = progress + '%';
+                status.textContent = `生成专业版(${arch})... ${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    status.textContent = `✅ 专业版(${arch})ISO生成完成！`;
+                    isGenerating = false;
+                }
+            }, 300);
+        }
+        
+        function downloadISO() {
+            const arch = document.getElementById('architecture').value;
+            const content = `MOs 专业版 ISO 镜像
+版本: 1.0.0
+构建: 2024.0301
+类型: 专业版
+架构: ${arch}
+大小: 4.2 GB
+生成时间: ${new Date().toLocaleString()}
+
+包含功能:
+- 家庭版全部功能
+- 专业开发环境
+- 高级安全加密
+- 虚拟化技术支持
+- 多桌面工作区
+- 企业云同步
+
+系统要求:
+- 处理器: 2GHz+ 双核
+- 内存: 4GB RAM
+- 存储: 64GB
+
+感谢使用MOs专业版！`;
+            
+            const blob = new Blob([content], { type: 'application/octet-stream' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `MOS_Pro_Edition_v1.0_${arch}.iso`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            alert('专业版ISO文件下载开始！');
+        }
+    </script>
+</body>
+</html>

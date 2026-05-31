@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOs系统官方网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        .versions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+        
+        .version-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .version-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .version-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        .version-card h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .version-card p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .features {
+            text-align: left;
+            margin: 25px 0;
+        }
+        
+        .features li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            margin-left: 15px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .versions {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖥️ MOs 操作系统</h1>
+            <p>新一代智能操作系统，重新定义您的数字体验</p>
+        </header>
+        
+        <div class="versions">
+            <!-- 家庭版 -->
+            <div class="version-card">
+                <div class="version-icon">🏠</div>
+                <h2>家庭版</h2>
+                <p>专为家庭用户设计的简洁易用系统，满足日常娱乐和办公需求。</p>
+                
+                <ul class="features">
+                    <li>简洁直观的界面</li>
+                    <li>家庭安全保护</li>
+                    <li>多媒体娱乐中心</li>
+                    <li>智能语音助手</li>
+                </ul>
+                
+                <a href="mos_home.html" class="btn">立即体验</a>
+                <a href="mos_home.html" download class="btn btn-secondary">下载ISO</a>
+            </div>
+            
+            <!-- 专业版 -->
+            <div class="version-card">
+                <div class="version-icon">💼</div>
+                <h2>专业版</h2>
+                <p>为专业人士打造的高效系统，提供强大的开发工具和性能优化。</p>
+                
+                <ul class="features">
+                    <li>家庭版全部功能</li>
+                    <li>专业开发环境</li>
+                    <li>高级安全加密</li>
+                    <li>虚拟化技术支持</li>
+                </ul>
+                
+                <a href="mos_pro.html" class="btn">立即体验</a>
+                <a href="mos_pro.html" download class="btn btn-secondary">下载ISO</a>
+            </div>
+            
+            <!-- 旗舰版 -->
+            <div class="version-card">
+                <div class="version-icon">👑</div>
+                <h2>旗舰版</h2>
+                <p>终极操作系统体验，集成了最先进的技术和最强的性能。</p>
+                
+                <ul class="features">
+                    <li>专业版全部功能</li>
+                    <li>AI智能助手</li>
+                    <li>量子级加密安全</li>
+                    <li>无限虚拟化支持</li>
+                </ul>
+                
+                <a href="mos_ultimate.html" class="btn">立即体验</a>
+                <a href="mos_ultimate.html" download class="btn btn-secondary">下载ISO</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2024 MOs系统 版权所有 | 新一代智能操作系统</p>
+            <p style="margin-top: 10px; opacity: 0.7;">版本 2.0 | 支持 Windows、Mac、Linux 虚拟机</p>
+        </footer>
+    </div>
+</body>
+</html>
